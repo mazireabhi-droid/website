@@ -1,13 +1,621 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abhinath Engineering and Consultants LLP</title>
-</head>
-<body style="font-family:Arial;max-width:720px;margin:60px auto;padding:0 20px">
-<h1>Abhinath Engineering and Consultants LLP</h1>
-<p>Engineering consulting and software applications</p>
-<p>Our full website is coming soon.</p>
-</body>
-</html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Nath Foundation · an initiative of Abhinath Engineering and Consultants LLP</title>
+<meta name="description" content="Nath Foundation is an initiative of Abhinath Engineering and Consultants LLP, Pune: social work, education apps and videos, and Advaita philosophy.">
+<link rel="icon" href="mark.png">
+<style>body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mukta:wght@300;400;600&family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap">
+<style>
+/* Layout: one gold thread runs down the page from the hero spiral, and each pillar hangs off it. Single dark world, taken from the logo. */
+:root {
+  --ink: #0c0a07;
+  --surface: #16120c;
+  --raise: #1e1810;
+  --line: rgba(233, 177, 58, 0.18);
+  --gold: #e9b13a;
+  --gold-deep: #b9862a;
+  --text: #efe6d4;
+  --muted: #a99c84;
+  --placeholder: #7e9bb3;
+  --display: "Marcellus", "Cormorant Garamond", Georgia, serif;
+  --body: "Mukta", "Segoe UI", system-ui, sans-serif;
+  --sanskrit: "Tiro Devanagari Sanskrit", "Noto Serif Devanagari", "Mukta", serif;
+  --step-0: 1.0625rem;
+  --step-1: 1.25rem;
+  --step-2: 1.6rem;
+  --step-3: clamp(2rem, 4vw, 2.8rem);
+  --step-4: clamp(2.6rem, 6.4vw, 4.6rem);
+  --gutter: clamp(16px, 4vw, 48px);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: var(--step-0);
+  line-height: 1.65;
+  font-weight: 300;
+}
+a { color: var(--gold); }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; text-wrap: balance; margin: 0; line-height: 1.12; }
+p { margin: 0; }
+.wrap { max-width: 1180px; margin-inline: auto; padding-inline: var(--gutter); }
+.eyebrow { font-size: 0.78rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); font-weight: 400; }
+.lede { color: var(--muted); max-width: 62ch; font-size: var(--step-1); }
+
+/* nav */
+header.nav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: color-mix(in srgb, var(--ink) 86%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--gold); font-family: var(--display); font-size: 1.5rem; }
+.brand img { width: 42px; height: auto; }
+.nav .wrap { padding-block: 8px; }
+.tri { position: relative; width: 150px; height: 50px; flex: none; }
+.tri-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.tri-lines path { fill: none; stroke: var(--gold-deep); stroke-width: 1; opacity: 0.7; }
+.tri-lines .v { fill: var(--ink); stroke: var(--gold); stroke-width: 1.4; transition: fill .2s; }
+.tri-lines .v.on { fill: var(--gold); }
+.tri a { position: absolute; color: var(--muted); text-decoration: none; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; white-space: nowrap; transition: color .2s; }
+.tri a:hover, .tri a.on { color: var(--gold); }
+.tri .t-darshan { left: 50%; top: 1px; transform: translateX(-50%); }
+.tri .t-seva { right: 98px; top: 41px; }
+.tri .t-shiksha { left: 98px; top: 41px; }
+@media (max-width: 440px) { .nav .brand { font-size: 1.2rem; gap: 8px; } .nav .brand img { width: 32px; } .nav .wrap { gap: 10px; } }
+
+/* hero */
+.hero { position: relative; padding-block: clamp(36px, 7vw, 88px) clamp(40px, 6vw, 72px); overflow: hidden; }
+.hero .wrap { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(24px, 4vw, 56px); align-items: center; }
+.hero-copy { display: grid; gap: 22px; min-width: 0; }
+.hero h1 { font-size: var(--step-4); color: var(--text); }
+.hero h1 em { font-style: normal; color: var(--gold); }
+.hero-media { position: relative; aspect-ratio: 16 / 9; max-width: 100%; min-width: 0; }
+.hero-media video { width: 100%; height: 100%; object-fit: cover; display: block;
+  -webkit-mask-image: radial-gradient(ellipse 70% 72% at 50% 50%, #000 55%, transparent 100%);
+          mask-image: radial-gradient(ellipse 70% 72% at 50% 50%, #000 55%, transparent 100%); }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 999px; text-decoration: none;
+  font-family: var(--body); font-size: 0.98rem; font-weight: 400; border: 1px solid var(--gold); cursor: pointer; }
+.btn.solid { background: var(--gold); color: var(--ink); }
+.btn.solid:hover { background: #f3c45a; }
+.btn.ghost { background: transparent; color: var(--gold); }
+.btn.ghost:hover { background: rgba(233,177,58,0.08); }
+.motto { font-size: 0.8rem; letter-spacing: 0.34em; color: var(--muted); text-transform: uppercase; }
+@media (max-width: 860px) { .hero .wrap { grid-template-columns: 1fr; } .hero-media { order: -1; } }
+
+/* thread + sections */
+section { padding-block: clamp(56px, 9vw, 112px); border-top: 1px solid var(--line); }
+.sec-head { display: grid; gap: 14px; margin-bottom: clamp(28px, 5vw, 52px); }
+.sec-head h2 { font-size: var(--step-3); }
+
+/* three paths */
+.paths { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2.4vw, 28px); }
+.path { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 22px 22px 26px; display: grid; gap: 12px; align-content: start; min-width: 0; text-decoration: none; color: inherit; transition: border-color .25s, transform .25s; }
+.path:hover { border-color: rgba(233,177,58,0.5); transform: translateY(-2px); }
+@media (prefers-reduced-motion: reduce) { .path:hover { transform: none; } }
+.path canvas { width: 100%; height: 150px; display: block; }
+.path .skt { font-family: var(--sanskrit); color: var(--gold); font-size: 1.15rem; }
+.path h3 { font-size: var(--step-2); letter-spacing: 0.14em; }
+.path p { color: var(--muted); }
+.path .more { color: var(--gold); font-size: 0.92rem; }
+@media (max-width: 860px) { .paths { grid-template-columns: 1fr; } }
+
+/* seva steps */
+.split { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(28px, 5vw, 72px); align-items: start; }
+.split > * { min-width: 0; }
+@media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: s; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 52px 1fr; gap: 16px; padding-block: 18px; border-bottom: 1px solid var(--line); }
+.steps li::before { content: counter(s); font-family: var(--display); font-size: 1.7rem; color: var(--gold); line-height: 1; padding-top: 4px; }
+.steps b { font-weight: 600; color: var(--text); display: block; }
+.steps span { color: var(--muted); }
+.focus { display: grid; gap: 16px; }
+.focus .card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 18px 20px; }
+.focus .card { display: grid; grid-template-columns: 44px 1fr; column-gap: 14px; }
+.focus .card .ci { width: 40px; height: 40px; color: var(--gold); grid-row: span 2; }
+.focus .card b { color: var(--gold); font-weight: 400; font-family: var(--display); font-size: 1.2rem; display: block; margin-bottom: 4px; }
+.focus .card p { color: var(--muted); }
+
+/* shiksha explorer */
+.lab { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: clamp(16px, 2.4vw, 26px); display: grid; gap: 16px; }
+.lab-top { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; }
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.tabs button { font: inherit; font-size: 0.92rem; background: transparent; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+.tabs button[aria-pressed="true"] { color: var(--ink); background: var(--gold); border-color: var(--gold); }
+.lab canvas { width: 100%; height: clamp(240px, 34vw, 360px); display: block; touch-action: none; cursor: ew-resize; }
+.readout { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; font-variant-numeric: tabular-nums; }
+.readout div { border-top: 1px solid var(--line); padding-top: 10px; min-width: 0; }
+.readout small { display: block; color: var(--muted); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.readout strong { font-weight: 400; font-size: 1.35rem; color: var(--text); }
+.readout .d strong { color: var(--gold); }
+.lab .note { color: var(--muted); font-size: 0.98rem; }
+.lab label { color: var(--muted); font-size: 0.9rem; display: flex; gap: 12px; align-items: center; }
+.lab input[type=range] { flex: 1; accent-color: var(--gold); }
+.topics { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.topics span { border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 0.9rem; color: var(--muted); }
+
+/* darshan */
+.darshan { text-align: center; position: relative; overflow: hidden; }
+.darshan canvas.rip { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.55; }
+.darshan .wrap { position: relative; display: grid; gap: 22px; justify-items: center; }
+.shloka { font-family: var(--sanskrit); font-size: clamp(2.1rem, 6vw, 4.2rem); color: var(--gold); line-height: 1.3; text-shadow: 0 0 28px rgba(233,150,40,0.35); }
+.translit { font-family: var(--sanskrit); font-style: italic; color: var(--text); font-size: var(--step-1); }
+.meaning { color: var(--muted); max-width: 52ch; font-size: var(--step-1); }
+.source { font-size: 0.82rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+.vakya { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 10px; width: 100%; max-width: 860px; text-align: left; }
+.vakya div { border-left: 1px solid var(--gold-deep); padding: 4px 0 4px 18px; }
+.vakya .s { font-family: var(--sanskrit); color: var(--gold); font-size: 1.5rem; }
+.vakya p { color: var(--muted); }
+@media (max-width: 640px) { .vakya { grid-template-columns: 1fr; } }
+
+/* watch */
+.film { border-radius: 8px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 16 / 9; max-width: 100%; background: #000; }
+.film video { width: 100%; height: 100%; display: block; }
+
+/* join */
+.ways { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.ways > div { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px; display: grid; gap: 8px; align-content: start; }
+.ways .wi { width: 44px; height: 44px; color: var(--gold); }
+.ways h3 { font-size: 1.35rem; color: var(--gold); }
+.ways p { color: var(--muted); }
+@media (max-width: 860px) { .ways { grid-template-columns: 1fr; } }
+.contact { margin-top: 28px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.contact > div { border-top: 1px solid var(--line); padding-top: 12px; min-width: 0; }
+.contact small { display: block; color: var(--muted); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.todo { color: var(--placeholder); border-bottom: 1px dashed var(--placeholder); }
+@media (max-width: 720px) { .contact { grid-template-columns: 1fr; } }
+
+/* verses */
+.verse { display: grid; gap: 8px; padding: clamp(18px, 3vw, 28px) 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-block: clamp(28px, 4vw, 44px); text-align: center; justify-items: center; }
+.verse .sa { font-family: var(--sanskrit); color: var(--gold); font-size: clamp(1.45rem, 3.4vw, 2.2rem); line-height: 1.5; text-shadow: 0 0 22px rgba(233,150,40,0.25); max-width: 34ch; }
+.verse .tr { font-family: var(--sanskrit); font-style: italic; color: var(--text); font-size: 1.02rem; max-width: 60ch; }
+.verse .mn { color: var(--muted); max-width: 58ch; }
+.verse .src { font-size: 0.74rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-deep); }
+.verse.left { text-align: left; justify-items: start; }
+
+/* branch grids with line symbols */
+.branches { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.branches.five { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+@media (max-width: 960px) { .branches.five { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .branches, .branches.five { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 420px) { .branches, .branches.five { grid-template-columns: 1fr; } }
+.branch { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 18px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.branch svg { width: 56px; height: 56px; color: var(--gold); }
+.branch h3 { font-size: 1.22rem; color: var(--text); }
+.branch .skt { font-family: var(--sanskrit); color: var(--gold); font-size: 1rem; }
+.branch p { color: var(--muted); font-size: 0.98rem; line-height: 1.55; }
+.branch .eg { font-size: 0.86rem; color: var(--gold-deep); }
+.ico { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.ico .f { fill: currentColor; stroke: none; }
+.steps li { grid-template-columns: 52px 44px 1fr; }
+.steps li svg { width: 40px; height: 40px; color: var(--gold); }
+@media (max-width: 480px) { .steps li { grid-template-columns: 34px 1fr; } .steps li svg { display: none; } }
+.sub-head { font-family: var(--display); font-size: var(--step-2); margin: clamp(32px, 5vw, 52px) 0 18px; }
+
+footer { border-top: 1px solid var(--line); padding-block: 36px; }
+footer .fv { font-family: var(--sanskrit); color: var(--gold); font-size: 1.05rem; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center; color: var(--muted); font-size: 0.9rem; }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <!-- Seva -->
+  <symbol id="i-group" viewBox="0 0 64 64"><g class="ico"><circle cx="32" cy="32" r="20" stroke-dasharray="3 4"/><circle class="f" cx="32" cy="12" r="4.5"/><circle class="f" cx="49.3" cy="22" r="4.5"/><circle class="f" cx="49.3" cy="42" r="4.5"/><circle class="f" cx="32" cy="52" r="4.5"/><circle class="f" cx="14.7" cy="42" r="4.5"/><circle class="f" cx="14.7" cy="22" r="4.5"/><circle cx="32" cy="32" r="5"/></g></symbol>
+  <symbol id="i-save" viewBox="0 0 64 64"><g class="ico"><path d="M22 24h20v24a6 6 0 0 1-6 6h-8a6 6 0 0 1-6-6z"/><path d="M25 18h14v6H25z"/><path d="M28 36h8"/><circle cx="32" cy="9" r="4"/><path d="M32 13v3"/></g></symbol>
+  <symbol id="i-lend" viewBox="0 0 64 64"><g class="ico"><circle class="f" cx="14" cy="32" r="5"/><circle class="f" cx="50" cy="32" r="5"/><path d="M18 24c8-10 20-10 28 0"/><path d="M46 24l1-7M46 24l-7-1"/><path d="M46 40c-8 10-20 10-28 0"/><path d="M18 40l-1 7M18 40l7 1"/></g></symbol>
+  <symbol id="i-bank" viewBox="0 0 64 64"><g class="ico"><path d="M10 24L32 11l22 13z"/><path d="M12 24h40"/><path d="M17 28v18M27 28v18M37 28v18M47 28v18"/><path d="M11 50h42M9 55h46"/></g></symbol>
+  <symbol id="i-sprout" viewBox="0 0 64 64"><g class="ico"><path d="M10 54h44"/><path d="M32 54V28"/><path d="M32 36c-12 0-18-7-18-16 10 0 18 6 18 16z"/><path d="M32 30c0-10 7-17 18-17 0 11-8 17-18 17z"/><path d="M22 54c2-4 6-6 10-6s8 2 10 6"/></g></symbol>
+  <symbol id="i-home" viewBox="0 0 64 64"><g class="ico"><path d="M10 30L32 12l22 18"/><path d="M16 26v26h32V26"/><path d="M32 46c-7-5-10-8-10-12a5 5 0 0 1 10-2 5 5 0 0 1 10 2c0 4-3 7-10 12z"/></g></symbol>
+  <!-- Shiksha -->
+  <symbol id="i-math" viewBox="0 0 64 64"><g class="ico"><path d="M10 54V10M10 54h44"/><path d="M12 46c8-2 12-30 22-30s10 18 18 20"/><path d="M20 24l26-4"/><circle class="f" cx="33" cy="21.5" r="3"/></g></symbol>
+  <symbol id="i-physics" viewBox="0 0 64 64"><g class="ico"><ellipse cx="32" cy="32" rx="24" ry="9"/><ellipse cx="32" cy="32" rx="24" ry="9" transform="rotate(60 32 32)"/><ellipse cx="32" cy="32" rx="24" ry="9" transform="rotate(-60 32 32)"/><circle class="f" cx="32" cy="32" r="3.5"/></g></symbol>
+  <symbol id="i-chem" viewBox="0 0 64 64"><g class="ico"><path d="M26 10h12M28 10v16L14 50a4 4 0 0 0 3.5 6h29a4 4 0 0 0 3.5-6L36 26V10"/><path d="M19 42h26"/><circle cx="28" cy="48" r="2"/><circle cx="37" cy="46" r="1.5"/><circle cx="33" cy="36" r="1.5"/></g></symbol>
+  <symbol id="i-bio" viewBox="0 0 64 64"><g class="ico"><path d="M22 6c0 13 20 13 20 26S22 45 22 58"/><path d="M42 6c0 13-20 13-20 26s20 13 20 26"/><path d="M25 13h14M31 19h2M25 51h14M31 45h2M23 26h18M23 38h18"/></g></symbol>
+  <symbol id="i-econ" viewBox="0 0 64 64"><g class="ico"><path d="M10 54V10M10 54h44"/><path d="M16 16c10 16 22 26 34 32"/><path d="M16 48c12-6 24-16 34-32"/><circle class="f" cx="33" cy="33" r="3"/><path d="M33 33v21M10 33h23" stroke-dasharray="2 3"/></g></symbol>
+  <symbol id="i-earth" viewBox="0 0 64 64"><g class="ico"><circle cx="32" cy="32" r="22"/><ellipse cx="32" cy="32" rx="9" ry="22"/><path d="M10 32h44M14 21h36M14 43h36"/></g></symbol>
+  <!-- Darshan -->
+  <symbol id="i-bindu" viewBox="0 0 64 64"><g class="ico"><circle cx="32" cy="32" r="22"/><circle cx="32" cy="32" r="13" stroke-dasharray="2 3"/><circle class="f" cx="32" cy="32" r="3.5"/></g></symbol>
+  <symbol id="i-leaf" viewBox="0 0 64 64"><g class="ico"><rect x="6" y="22" width="52" height="20" rx="10"/><circle cx="20" cy="32" r="1.8"/><circle cx="44" cy="32" r="1.8"/><path d="M14 27h36M24 32h16M14 37h36"/></g></symbol>
+  <symbol id="i-wheel" viewBox="0 0 64 64"><g class="ico"><circle cx="32" cy="32" r="22"/><circle cx="32" cy="32" r="5"/><path d="M32 10v17M32 37v17M10 32h17M37 32h17M16.4 16.4l12 12M35.6 35.6l12 12M47.6 16.4l-12 12M28.4 35.6l-12 12"/></g></symbol>
+  <symbol id="i-diya" viewBox="0 0 64 64"><g class="ico"><path d="M12 40c4 8 12 12 20 12s16-4 20-12z"/><path d="M44 40c4-1 7-3 9-6"/><path d="M32 36c-5-4-5-10 0-18 5 8 5 14 0 18z"/><path d="M32 30v4"/></g></symbol>
+  <symbol id="i-satsang" viewBox="0 0 64 64"><g class="ico"><circle cx="16" cy="28" r="5"/><circle cx="32" cy="22" r="5"/><circle cx="48" cy="28" r="5"/><path d="M7 48c1-7 5-11 9-11s8 4 9 11M23 44c1-8 5-12 9-12s8 4 9 12M39 48c1-7 5-11 9-11s8 4 9 11"/><path d="M14 54h36"/></g></symbol>
+</svg>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="mark.png" alt="">Nath Foundation</a>
+    <nav class="tri" aria-label="Three paths">
+      <svg class="tri-lines" viewBox="0 0 150 50" aria-hidden="true">
+        <path d="M75 18 L59 45.7 L91 45.7 Z"/>
+        <circle class="v" data-k="darshan" cx="75" cy="18" r="3"/>
+        <circle class="v" data-k="seva" cx="59" cy="45.7" r="3"/>
+        <circle class="v" data-k="shiksha" cx="91" cy="45.7" r="3"/>
+      </svg>
+      <a class="t-darshan" data-k="darshan" href="#darshan">Darshan</a>
+      <a class="t-seva" data-k="seva" href="#seva">Seva</a>
+      <a class="t-shiksha" data-k="shiksha" href="#shiksha">Shiksha</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">Nath Foundation · an initiative of Abhinath Engineering and Consultants LLP</span>
+        <h1>Three paths. <em>One reality.</em></h1>
+        <p class="lede">We stand with economically weaker families through self-help groups, make science, mathematics and every subject simple to see, and share the non-dual vision of Advaita. Three kinds of work, all growing from one centre.</p>
+        <div class="actions">
+          <a class="btn solid" href="https://www.youtube.com/results?search_query=Nath+Foundation" target="_blank" rel="noopener">Watch on YouTube</a>
+          <a class="btn ghost" href="#join">Get involved</a>
+        </div>
+        <span class="motto">Serve · Learn · Realise</span>
+      </div>
+      <div class="hero-media">
+        <video id="heroVid" src="hero-v3.mp4" poster="hero-v3.jpg" muted playsinline autoplay preload="auto" aria-label="The Nath Foundation spiral drawing itself from a single point"></video>
+      </div>
+    </div>
+  </div>
+
+  <section id="paths">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">The three spirals</span>
+        <h2>Each arm of the symbol is one path</h2>
+        <p class="lede">They start at the same point and return to it. Choose where you want to begin.</p>
+      </div>
+      <div class="paths">
+        <a class="path" href="#seva">
+          <canvas id="cvSeva" aria-hidden="true"></canvas>
+          <span class="skt">सेवा</span>
+          <h3>SEVA</h3>
+          <p>Social work with economically weaker sections, built around self-help groups that save, lend and grow together.</p>
+          <span class="more">How we work →</span>
+        </a>
+        <a class="path" href="#shiksha">
+          <canvas id="cvShiksha" aria-hidden="true"></canvas>
+          <span class="skt">शिक्षा</span>
+          <h3>SHIKSHA</h3>
+          <p>Education across subjects: mathematics, physics, chemistry, biology, economics and general knowledge, explained through simulations and graphs you can watch move.</p>
+          <span class="more">Explore the subjects →</span>
+        </a>
+        <a class="path" href="#darshan">
+          <canvas id="cvDarshan" aria-hidden="true"></canvas>
+          <span class="skt">दर्शन</span>
+          <h3>DARSHAN</h3>
+          <p>Advaita Vedanta: one consciousness in all. Conversations that connect people across every difference that seems to divide them.</p>
+          <span class="more">Read the verse →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="seva">
+    <div class="wrap split">
+      <div class="sec-head">
+        <span class="eyebrow">Seva · सेवा</span>
+        <h2>Small groups, real savings, lasting change</h2>
+        <p class="lede">A self-help group is usually 10 to 20 people, often women from the same neighbourhood, who pool small savings and decide together how to use them. We help groups form, keep their books, and reach the next step.</p>
+        <div class="focus">
+          <div class="card"><svg class="ci" aria-hidden="true"><use href="#i-group"/></svg><b>Promote self-help groups</b><p>Guidance on forming a group, running meetings, keeping records and building trust between members.</p></div>
+          <div class="card"><svg class="ci" aria-hidden="true"><use href="#i-home"/></svg><b>Support weaker sections</b><p>Practical help for families who need it most, so that support turns into self-reliance.</p></div>
+        </div>
+      </div>
+      <ol class="steps" aria-label="How a self-help group grows">
+        <li><svg aria-hidden="true"><use href="#i-group"/></svg><div><b>Form the group</b><span>Members from similar circumstances come together and agree on rules, a meeting day and a saving amount.</span></div></li>
+        <li><svg aria-hidden="true"><use href="#i-save"/></svg><div><b>Save regularly</b><span>Every member deposits a small fixed amount at each meeting. The record book is the group's memory.</span></div></li>
+        <li><svg aria-hidden="true"><use href="#i-lend"/></svg><div><b>Lend within the group</b><span>Pooled savings are lent to members for urgent needs, repaid with a small interest that stays with the group.</span></div></li>
+        <li><svg aria-hidden="true"><use href="#i-bank"/></svg><div><b>Link with a bank</b><span>A group with a steady track record can open a bank account and qualify for credit through SHG–bank linkage.</span></div></li>
+        <li><svg aria-hidden="true"><use href="#i-sprout"/></svg><div><b>Build livelihoods</b><span>With credit and confidence, members start or expand small enterprises and support one another as they grow.</span></div></li>
+      </ol>
+    </div>
+    <div class="wrap">
+      <div class="verse">
+        <p class="sa" lang="sa">परोपकाराय फलन्ति वृक्षाः परोपकाराय वहन्ति नद्यः ।<br>परोपकाराय दुहन्ति गावः परोपकारार्थमिदं शरीरम् ॥</p>
+        <p class="tr">paropakārāya phalanti vṛkṣāḥ paropakārāya vahanti nadyaḥ, paropakārāya duhanti gāvaḥ paropakārārtham idaṃ śarīram</p>
+        <p class="mn">Trees bear fruit for others, rivers flow for others, cows give milk for others. This body, too, is for the good of others.</p>
+        <span class="src">Subhāṣita</span>
+      </div>
+      <div class="verse">
+        <p class="sa" lang="sa">संघे शक्तिः कलौ युगे</p>
+        <p class="tr">saṅghe śaktiḥ kalau yuge</p>
+        <p class="mn">In this age, strength lies in coming together. The idea at the heart of every self-help group.</p>
+        <span class="src">Subhāṣita</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="shiksha">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Shiksha · शिक्षा</span>
+        <h2>Every subject, made visible</h2>
+        <p class="lede">From the slope of a curve to the path of a planet, ideas are easier to hold when you can see them move. Shiksha covers the whole spread of education through simulations, graphs and plain explanations.</p>
+      </div>
+      <div class="verse">
+        <p class="sa" lang="sa">न हि ज्ञानेन सदृशं पवित्रमिह विद्यते</p>
+        <p class="tr">na hi jñānena sadṛśaṃ pavitram iha vidyate</p>
+        <p class="mn">Nothing in this world purifies like knowledge.</p>
+        <span class="src">Bhagavad Gītā 4.38</span>
+      </div>
+      <div class="branches" aria-label="Subjects">
+        <div class="branch"><svg aria-hidden="true"><use href="#i-math"/></svg><span class="skt">गणित</span><h3>Mathematics</h3><p>Limits, derivatives, integrals, geometry and probability, built up step by step.</p><span class="eg">Try the explorer below</span></div>
+        <div class="branch"><svg aria-hidden="true"><use href="#i-physics"/></svg><span class="skt">भौतिकी</span><h3>Physics</h3><p>Motion, forces, energy, waves and light, simulated so the equations make sense.</p><span class="eg">Projectiles · Pendulums · Waves</span></div>
+        <div class="branch"><svg aria-hidden="true"><use href="#i-chem"/></svg><span class="skt">रसायन</span><h3>Chemistry</h3><p>Atoms, bonds and reactions, with the reasons behind what happens in the flask.</p><span class="eg">Periodic trends · Reaction rates</span></div>
+        <div class="branch"><svg aria-hidden="true"><use href="#i-bio"/></svg><span class="skt">जीवविज्ञान</span><h3>Biology</h3><p>Cells, genetics, the human body and ecosystems, explained from the inside out.</p><span class="eg">DNA · Population growth</span></div>
+        <div class="branch"><svg aria-hidden="true"><use href="#i-econ"/></svg><span class="skt">अर्थशास्त्र</span><h3>Economics</h3><p>Supply and demand, marginal thinking, inflation and growth, using real graphs.</p><span class="eg">Marginal cost · Elasticity</span></div>
+        <div class="branch"><svg aria-hidden="true"><use href="#i-earth"/></svg><span class="skt">सामान्य ज्ञान</span><h3>General knowledge</h3><p>Earth, space, history of ideas and how things work in everyday life.</p><span class="eg">Seasons · Climate · Inventions</span></div>
+      </div>
+      <h3 class="sub-head">Try one: see the derivative</h3>
+      <p class="lede" style="margin-bottom:18px">A derivative is the slope of the tangent line at a point. Drag across the graph and watch the slope change. The last tab shows the same idea in economics: marginal cost is the derivative of total cost.</p>
+      <div class="lab">
+        <div class="lab-top">
+          <div class="tabs" role="group" aria-label="Function">
+            <button type="button" id="fSin" aria-pressed="true">f(x) = sin x</button>
+            <button type="button" id="fSq" aria-pressed="false">f(x) = x²</button>
+            <button type="button" id="fCost" aria-pressed="false">Total cost C(q)</button>
+          </div>
+        </div>
+        <canvas id="cvLab" aria-label="Graph of the selected function with its tangent line"></canvas>
+        <label for="xSlider"><span id="xName">x</span><input type="range" id="xSlider" min="0" max="1000" value="300"></label>
+        <div class="readout">
+          <div><small id="lblX">x</small><strong id="valX">0</strong></div>
+          <div><small id="lblF">f(x)</small><strong id="valF">0</strong></div>
+          <div class="d"><small id="lblD">f′(x), slope</small><strong id="valD">0</strong></div>
+        </div>
+        <p class="note" id="labNote"></p>
+      </div>
+      <div class="verse">
+        <p class="sa" lang="sa">सा विद्या या विमुक्तये</p>
+        <p class="tr">sā vidyā yā vimuktaye</p>
+        <p class="mn">True knowledge is that which sets one free.</p>
+        <span class="src">Viṣṇu Purāṇa 1.19.41</span>
+      </div>
+      <div class="topics" aria-label="Topics on the channel">
+        <span>Derivatives</span><span>Integration</span><span>Probability</span><span>Newton's laws</span><span>Waves and sound</span><span>Chemical bonding</span><span>Genetics</span><span>Ecosystems</span><span>Supply and demand</span><span>Compound growth</span><span>Solar system</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="darshan" class="darshan">
+    <canvas class="rip" id="cvRip" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <span class="eyebrow">Darshan · दर्शन</span>
+      <p class="shloka" lang="sa">एकं सद्विप्रा बहुधा वदन्ति</p>
+      <p class="translit">ekaṃ sad viprā bahudhā vadanti</p>
+      <p class="meaning">Truth is one; the wise call it by many names.</p>
+      <span class="source">Ṛgveda 1.164.46</span>
+      <h3 class="sub-head" style="margin-bottom:0">The four Mahāvākyas</h3>
+      <div class="vakya">
+        <div><span class="s" lang="sa">प्रज्ञानं ब्रह्म</span><p>Prajñānaṃ brahma. Consciousness is Brahman. Aitareya Upaniṣad, Ṛgveda</p></div>
+        <div><span class="s" lang="sa">अहं ब्रह्मास्मि</span><p>Ahaṃ brahmāsmi. I am Brahman. Bṛhadāraṇyaka Upaniṣad 1.4.10, Yajurveda</p></div>
+        <div><span class="s" lang="sa">तत्त्वमसि</span><p>Tat tvam asi. You are That. Chāndogya Upaniṣad 6.8.7, Sāmaveda</p></div>
+        <div><span class="s" lang="sa">अयमात्मा ब्रह्म</span><p>Ayam ātmā brahma. This Self is Brahman. Māṇḍūkya Upaniṣad 2, Atharvaveda</p></div>
+      </div>
+      <div class="verse" style="width:100%">
+        <p class="sa" lang="sa">ब्रह्म सत्यं जगन्मिथ्या जीवो ब्रह्मैव नापरः</p>
+        <p class="tr">brahma satyaṃ jagan mithyā jīvo brahmaiva nāparaḥ</p>
+        <p class="mn">Brahman alone is real, the world is appearance, and the individual self is not other than Brahman.</p>
+        <span class="src">Attributed to Ādi Śaṅkarācārya</span>
+      </div>
+      <div class="branches five" style="width:100%;text-align:left" aria-label="Areas of study">
+        <div class="branch"><svg aria-hidden="true"><use href="#i-bindu"/></svg><span class="skt">अद्वैत</span><h3>Advaita Vedānta</h3><p>Non-duality: one reality appearing as many.</p></div>
+        <div class="branch"><svg aria-hidden="true"><use href="#i-leaf"/></svg><span class="skt">उपनिषद्</span><h3>Upaniṣads</h3><p>Reading the source texts, verse by verse.</p></div>
+        <div class="branch"><svg aria-hidden="true"><use href="#i-wheel"/></svg><span class="skt">भगवद्गीता</span><h3>Bhagavad Gītā</h3><p>Action, devotion and knowledge in daily life.</p></div>
+        <div class="branch"><svg aria-hidden="true"><use href="#i-diya"/></svg><span class="skt">ध्यान</span><h3>Dhyāna</h3><p>Meditation and self-inquiry: who am I?</p></div>
+        <div class="branch"><svg aria-hidden="true"><use href="#i-satsang"/></svg><span class="skt">सत्सङ्ग</span><h3>Satsaṅga</h3><p>Coming together in good company to question and reflect.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="watch">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">The channel</span>
+        <h2>Watch the introduction</h2>
+      </div>
+      <a class="film" href="https://www.youtube.com/results?search_query=Nath+Foundation" target="_blank" rel="noopener" style="display:block"><img src="intro-v3.jpg" alt="Nath Foundation introduction, watch on YouTube" style="width:100%;height:100%;object-fit:cover;display:block"></a>
+    </div>
+  </section>
+
+  <section id="apps">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Apps</span>
+        <h2>Engineering and learning apps</h2>
+        <p class="lede">We build small, focused apps for engineers and students: calculators and simulations that make technical ideas quick to use and easy to see. Our apps are published on Google Play by Abhinath Engineering and Consultants LLP under the developer name Nath Foundation.</p>
+      </div>
+      <p class="lede">New apps are coming soon. Read our <a href="privacy.html">privacy policy</a>.</p>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Walk the path with us</span>
+        <h2>Ways to get involved</h2>
+      </div>
+      <div class="verse">
+        <p class="sa" lang="sa">अयं निजः परो वेति गणना लघुचेतसाम् ।<br>उदारचरितानां तु वसुधैव कुटुम्बकम् ॥</p>
+        <p class="tr">ayaṃ nijaḥ paro veti gaṇanā laghucetasām, udāracaritānāṃ tu vasudhaiva kuṭumbakam</p>
+        <p class="mn">"This one is mine, that one is a stranger" is how narrow minds count. For the large-hearted, the whole world is one family.</p>
+        <span class="src">Mahā Upaniṣad 6.71–72</span>
+      </div>
+      <div class="ways">
+        <div><svg class="wi" aria-hidden="true"><use href="#i-group"/></svg><h3>Volunteer for Seva</h3><p>Help a self-help group with record keeping, training sessions or connecting members to banks and schemes.</p></div>
+        <div><svg class="wi" aria-hidden="true"><use href="#i-math"/></svg><h3>Learn with Shiksha</h3><p>Subscribe to the channel, bring your toughest concept, and suggest the next simulation.</p></div>
+        <div><svg class="wi" aria-hidden="true"><use href="#i-diya"/></svg><h3>Join Darshan</h3><p>Take part in study circles and discussions on Advaita, open to anyone who is curious.</p></div>
+      </div>
+      <div class="contact">
+        <div><small>Email</small><a href="mailto:abhinath.engineering@gmail.com">abhinath.engineering@gmail.com</a></div>
+        <div><small>Phone / WhatsApp</small><a href="tel:+917744912523">+91 77449 12523</a></div>
+        <div><small>Registered entity</small><span>Abhinath Engineering and Consultants LLP<br>LLPIN: AAU-4766</span></div>
+      </div>
+      <div class="contact" style="grid-template-columns:1fr">
+        <div><small>Registered address</small><span>Flat no. 2, Final Plot 751, S. No. 165, Shivajinagar, Pune, Maharashtra 411005, India</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="mark.png" alt="">Nath Foundation</a>
+    <span class="fv" lang="sa">सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः</span>
+    <span>Serve · Learn · Realise</span>
+  </div>
+  <div class="wrap" style="margin-top:14px;font-size:0.85rem">
+    <span>© 2026 Abhinath Engineering and Consultants LLP (LLPIN AAU-4766). Nath Foundation is an initiative of the LLP.</span>
+    <a href="privacy.html">Privacy policy</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var GOLD = '#e9b13a', GOLDA = function (a) { return 'rgba(233,177,58,' + a + ')'; };
+  var MUTED = '#a99c84', TEXT = '#efe6d4';
+
+  // triangle nav: light the vertex of the section in view
+  var triEls = document.querySelectorAll('.tri [data-k]');
+  function mark(k) { triEls.forEach(function (el) { el.classList.toggle('on', el.getAttribute('data-k') === k); }); }
+  triEls.forEach(function (el) {
+    el.addEventListener('mouseenter', function () { mark(el.getAttribute('data-k')); });
+  });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) mark(e.target.id); });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    ['seva', 'shiksha', 'darshan'].forEach(function (id) { var el = document.getElementById(id); if (el) io.observe(el); });
+  }
+
+  // hero video: play once, rest on the poster frame; respect reduced motion
+  var hv = document.getElementById('heroVid');
+  if (reduce) { hv.removeAttribute('autoplay'); hv.pause(); }
+  hv.addEventListener('ended', function () { try { hv.currentTime = hv.duration - 0.05; } catch (e) {} });
+
+  function fit(cv) {
+    var r = cv.getBoundingClientRect(), d = window.devicePixelRatio || 1;
+    var w = Math.max(1, Math.round(r.width * d)), h = Math.max(1, Math.round(r.height * d));
+    if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; }
+    var c = cv.getContext('2d'); c.setTransform(d, 0, 0, d, 0, 0); return { c: c, w: r.width, h: r.height };
+  }
+
+  // ---- mini motif: seva network
+  var nodes = [];
+  for (var i = 0; i < 16; i++) nodes.push({ x: Math.random(), y: Math.random(), p: Math.random() * 6.28 });
+  function drawSeva(t) {
+    var f = fit(document.getElementById('cvSeva')), c = f.c, w = f.w, h = f.h;
+    c.clearRect(0, 0, w, h);
+    var pts = nodes.map(function (n) { return [12 + n.x * (w - 24) + Math.sin(t * 0.6 + n.p) * 4, 12 + n.y * (h - 24) + Math.cos(t * 0.5 + n.p) * 4]; });
+    for (var a = 0; a < pts.length; a++) for (var b = a + 1; b < pts.length; b++) {
+      var dx = pts[a][0] - pts[b][0], dy = pts[a][1] - pts[b][1], d = Math.sqrt(dx * dx + dy * dy);
+      if (d < 90) { c.strokeStyle = GOLDA(0.5 * (1 - d / 90)); c.lineWidth = 1; c.beginPath(); c.moveTo(pts[a][0], pts[a][1]); c.lineTo(pts[b][0], pts[b][1]); c.stroke(); }
+    }
+    pts.forEach(function (p, k) { c.fillStyle = GOLD; c.beginPath(); c.arc(p[0], p[1], 2.6 + Math.sin(t * 2 + k) * 0.8, 0, 6.29); c.fill(); });
+  }
+  // ---- mini motif: tangent sliding on a curve
+  function drawShiksha(t) {
+    var f = fit(document.getElementById('cvShiksha')), c = f.c, w = f.w, h = f.h;
+    c.clearRect(0, 0, w, h);
+    var F = function (x) { return h / 2 - (h * 0.3) * Math.sin(x / w * 2 * Math.PI * 1.2); };
+    c.strokeStyle = GOLDA(0.75); c.lineWidth = 2; c.beginPath();
+    for (var x = 0; x <= w; x += 2) { x === 0 ? c.moveTo(x, F(x)) : c.lineTo(x, F(x)); } c.stroke();
+    var px = w * (0.1 + 0.8 * (0.5 + 0.5 * Math.sin(t * 0.5))), s = (F(px + 1) - F(px - 1)) / 2, L = 60, nx = L / Math.sqrt(1 + s * s);
+    c.strokeStyle = TEXT; c.lineWidth = 1.5; c.beginPath(); c.moveTo(px - nx, F(px) - s * nx); c.lineTo(px + nx, F(px) + s * nx); c.stroke();
+    c.fillStyle = GOLD; c.beginPath(); c.arc(px, F(px), 4.5, 0, 6.29); c.fill();
+  }
+  // ---- ripples (mini and section backdrop)
+  function drawRipples(id, t, n, base) {
+    var f = fit(document.getElementById(id)), c = f.c, w = f.w, h = f.h;
+    c.clearRect(0, 0, w, h);
+    var cx = w / 2, cy = h / 2, R = Math.max(w, h) * 0.6;
+    for (var k = 0; k < n; k++) {
+      var ph = ((t * 0.12) + k / n) % 1;
+      c.strokeStyle = GOLDA(base * Math.pow(1 - ph, 1.5)); c.lineWidth = 1.2;
+      c.beginPath(); c.arc(cx, cy, 6 + ph * R, 0, 6.29); c.stroke();
+    }
+    c.fillStyle = GOLD; c.beginPath(); c.arc(cx, cy, 3, 0, 6.29); c.fill();
+  }
+
+  // ---- derivative explorer
+  var FUN = {
+    sin: { name: 'x', fx: 'f(x)', fd: 'f′(x), slope', x0: -Math.PI, x1: Math.PI * 2, f: Math.sin, d: Math.cos,
+      note: 'For f(x) = sin x the slope is cos x. Where the curve peaks, the tangent is flat and the slope is 0.' },
+    sq: { name: 'x', fx: 'f(x)', fd: 'f′(x), slope', x0: -3, x1: 3, f: function (x) { return x * x; }, d: function (x) { return 2 * x; },
+      note: 'For f(x) = x² the slope is 2x: negative on the left, zero at the bottom, and steeper the further you go.' },
+    cost: { name: 'q (units)', fx: 'C(q), ₹', fd: 'MC = C′(q), ₹/unit', x0: 0, x1: 40, f: function (q) { return 500 + 20 * q + 0.5 * q * q; }, d: function (q) { return 20 + q; },
+      note: 'Total cost C(q) = 500 + 20q + 0.5q² (₹). Its derivative, the marginal cost 20 + q, is roughly what one more unit costs at that output.' }
+  };
+  var cur = 'sin', slider = document.getElementById('xSlider'), lab = document.getElementById('cvLab');
+  function fmt(v) { return (Math.abs(v) >= 100 ? v.toFixed(0) : v.toFixed(2)).replace('-', '−'); }
+  function drawLab() {
+    var F = FUN[cur], f = fit(lab), c = f.c, w = f.w, h = f.h, pad = 28;
+    var N = 240, xs = [], ys = [], lo = Infinity, hi = -Infinity;
+    for (var i = 0; i <= N; i++) { var x = F.x0 + (F.x1 - F.x0) * i / N, y = F.f(x); xs.push(x); ys.push(y); lo = Math.min(lo, y); hi = Math.max(hi, y); }
+    var span = hi - lo || 1; lo -= span * 0.15; hi += span * 0.15;
+    var X = function (x) { return pad + (x - F.x0) / (F.x1 - F.x0) * (w - 2 * pad); };
+    var Y = function (y) { return h - pad - (y - lo) / (hi - lo) * (h - 2 * pad); };
+    c.clearRect(0, 0, w, h);
+    // grid + axes
+    c.strokeStyle = 'rgba(233,177,58,0.10)'; c.lineWidth = 1;
+    for (var g = 0; g <= 6; g++) { var gx = pad + g * (w - 2 * pad) / 6; c.beginPath(); c.moveTo(gx, pad); c.lineTo(gx, h - pad); c.stroke(); }
+    for (var g2 = 0; g2 <= 4; g2++) { var gy = pad + g2 * (h - 2 * pad) / 4; c.beginPath(); c.moveTo(pad, gy); c.lineTo(w - pad, gy); c.stroke(); }
+    c.strokeStyle = 'rgba(169,156,132,0.5)';
+    if (lo < 0 && hi > 0) { c.beginPath(); c.moveTo(pad, Y(0)); c.lineTo(w - pad, Y(0)); c.stroke(); }
+    if (F.x0 < 0 && F.x1 > 0) { c.beginPath(); c.moveTo(X(0), pad); c.lineTo(X(0), h - pad); c.stroke(); }
+    // curve
+    c.strokeStyle = GOLD; c.lineWidth = 2.5; c.beginPath();
+    xs.forEach(function (x, i) { i ? c.lineTo(X(x), Y(ys[i])) : c.moveTo(X(x), Y(ys[i])); }); c.stroke();
+    // tangent
+    var px = F.x0 + (F.x1 - F.x0) * slider.value / 1000, py = F.f(px), m = F.d(px), dx = (F.x1 - F.x0) * 0.16;
+    c.save(); c.beginPath(); c.rect(pad, pad, w - 2 * pad, h - 2 * pad); c.clip();
+    c.strokeStyle = TEXT; c.lineWidth = 1.6; c.beginPath(); c.moveTo(X(px - dx), Y(py - m * dx)); c.lineTo(X(px + dx), Y(py + m * dx)); c.stroke();
+    c.setLineDash([3, 4]); c.strokeStyle = 'rgba(169,156,132,0.6)'; c.beginPath(); c.moveTo(X(px), Y(py)); c.lineTo(X(px), h - pad); c.stroke(); c.setLineDash([]);
+    c.restore();
+    c.fillStyle = 'rgba(233,177,58,0.25)'; c.beginPath(); c.arc(X(px), Y(py), 11, 0, 6.29); c.fill();
+    c.fillStyle = GOLD; c.beginPath(); c.arc(X(px), Y(py), 5, 0, 6.29); c.fill();
+    c.fillStyle = MUTED; c.font = '12px Mukta, system-ui, sans-serif';
+    c.fillText(fmt(F.x0), pad, h - 8); var t1 = fmt(F.x1); c.fillText(t1, w - pad - c.measureText(t1).width, h - 8);
+    document.getElementById('valX').textContent = fmt(px);
+    document.getElementById('valF').textContent = fmt(py);
+    document.getElementById('valD').textContent = fmt(m);
+  }
+  function setFun(k) {
+    cur = k; var F = FUN[k];
+    [['fSin', 'sin'], ['fSq', 'sq'], ['fCost', 'cost']].forEach(function (p) { document.getElementById(p[0]).setAttribute('aria-pressed', p[1] === k ? 'true' : 'false'); });
+    document.getElementById('xName').textContent = F.name; document.getElementById('lblX').textContent = F.name;
+    document.getElementById('lblF').textContent = F.fx; document.getElementById('lblD').textContent = F.fd;
+    document.getElementById('labNote').textContent = F.note; drawLab();
+  }
+  document.getElementById('fSin').onclick = function () { setFun('sin'); };
+  document.getElementById('fSq').onclick = function () { setFun('sq'); };
+  document.getElementById('fCost').onclick = function () { setFun('cost'); };
+  slider.addEventListener('input', drawLab);
+  function fromPointer(e) { var r = lab.getBoundingClientRect(); var v = (e.clientX - r.left - 28) / (r.width - 56); slider.value = Math.round(Math.min(1, Math.max(0, v)) * 1000); drawLab(); }
+  var dragging = false;
+  lab.addEventListener('pointerdown', function (e) { dragging = true; try { lab.setPointerCapture(e.pointerId); } catch (x) {} fromPointer(e); });
+  lab.addEventListener('pointermove', function (e) { if (dragging) fromPointer(e); });
+  lab.addEventListener('pointerup', function () { dragging = false; });
+  window.addEventListener('resize', drawLab);
+  setFun('sin');
+
+  // ---- animation loop (static single frame when reduced motion)
+  function frame(ms) {
+    var t = ms / 1000;
+    drawSeva(t); drawShiksha(t); drawRipples('cvDarshan', t, 5, 0.6); drawRipples('cvRip', t * 0.6, 7, 0.35);
+    if (!reduce) requestAnimationFrame(frame);
+  }
+  if (reduce) frame(4000); else requestAnimationFrame(frame);
+})();
+</script>
+
+</body></html>
